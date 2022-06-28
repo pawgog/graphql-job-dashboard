@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { isLoggedIn } from './auth';
 import CompanyDetail from './components/CompanyDetail';
 import LoginForm from './components/LoginForm';
-import JobBoard from './components/JobBoard';
+import JobDashboard from './components/JobDashboard';
 import JobDetail from './components/JobDetail';
 import JobForm from './components/JobForm';
 import NavBar from './components/NavBar';
@@ -29,7 +29,7 @@ function App() {
       <main className="section">
         <Routes>
           <Route exact path="/"
-            element={<JobBoard />}
+            element={<JobDashboard />}
           />
           <Route path="/companies/:companyId"
             element={<CompanyDetail />}
