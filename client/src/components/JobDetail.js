@@ -1,11 +1,20 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { jobs } from '../fake-data';
+import { getJob } from './graphql/queries';
 
 function JobDetail() {
+  const [job, setJob] = useState(null);
   const { jobId } = useParams();
 
-  const job = jobs.find((job) => job.id === jobId);
+  useEffect(() => {
+      setTimeout(() => {
+        getJob(jobId).then(setJob)
+      }, 1000);
+  }, [jobId]);
+
+  if (!job) return <progress className="progress is-info" max="100">30%</progress>
+
   return (
     <div>
       <h1 className="title">
