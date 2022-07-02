@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getCompany } from './graphql/queries';
+import JobList from './JobList';
+import { staticText } from './staticText';
 
 function CompanyDetail() {
   const [company, setCompany] = useState(null);
@@ -12,16 +14,17 @@ function CompanyDetail() {
 
   if (!company) return <progress className="progress is-info" max="100" />
 
-  const {name, description} = company;
+  const {name, description, jobs} = company;
 
   return (
     <div>
       <h1 className="title">
         {name}
       </h1>
-      <div className="box">
+      <div className="box mb-6">
         {description}
       </div>
+      <JobList jobs={jobs} />
     </div>
   );
 }

@@ -11,5 +11,11 @@ export const resolvers = {
         company: ({ companyId }) => {
             return Company.findById(companyId)
         }
+    },
+
+    Company: {
+        jobs: (company) => {
+            return Job.findAll((job) => job.companyId === company.id)
+        }
     }
 } 

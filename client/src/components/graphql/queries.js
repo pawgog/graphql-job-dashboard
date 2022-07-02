@@ -23,7 +23,7 @@ export async function getJob(id) {
 
 export async function getJobs() {
     const query = gql`
-        query {
+        query JobsQuery {
             jobs {
                 id
                 title
@@ -44,6 +44,10 @@ export async function getCompany(id) {
                 id
                 name
                 description
+                jobs {
+                    id
+                    title
+                }
             }
         }
     `;

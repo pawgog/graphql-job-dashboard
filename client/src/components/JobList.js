@@ -10,12 +10,14 @@ function JobItem({ job }) {
           <p>
             <strong>{title}</strong>
           </p>
-          <p>
-            <span className="icon mr-1">
-              <i className="fa-solid fa-building"></i>
-            </span>
-            <span>{company.name}</span>
-          </p>
+          {company &&
+            <p>
+              <span className="icon mr-1">
+                <i className="fa-solid fa-building"></i>
+              </span>
+              <span>{company.name}</span>
+            </p>
+          }
         </Link>
       </div>
     </li>
