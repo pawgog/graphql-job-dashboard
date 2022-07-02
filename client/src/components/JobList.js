@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
 
 function JobItem({ job }) {
-  const title = job.company ? `${job.title} at ${job.company.name}` : job.title;
+  const { id, title, company } = job;
+
   return (
     <li className="media">
       <div className="media-content">
-        <Link to={`/jobs/${job.id}`}>
-          {title}
+        <Link to={`/jobs/${id}`}>
+          <p>
+            <strong>{title}</strong>
+          </p>
+          <p>
+            <span className="icon mr-1">
+              <i className="fa-solid fa-building"></i>
+            </span>
+            <span>{company.name}</span>
+          </p>
         </Link>
       </div>
     </li>

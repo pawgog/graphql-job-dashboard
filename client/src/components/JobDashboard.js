@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import JobList from './JobList';
 import { getJobs } from '../components/graphql/queries';
+import { staticText } from './staticText';
 
 function JobDashboard() {
   const [jobs, setJobs] = useState([]);
@@ -9,10 +10,12 @@ function JobDashboard() {
     getJobs().then(setJobs)
   }, [])
 
+  console.log('jobs', jobs);
+
   return (
     <div>
       <h1 className="title">
-        Job Dashboard
+        {jobs.length > 1 ? staticText.jobsDashboard : staticText.jobDashboard}
       </h1>
       <JobList jobs={jobs} />
     </div>

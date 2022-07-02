@@ -10,15 +10,17 @@ function CompanyDetail() {
       getCompany(companyId).then(setCompany)
   }, [companyId]);
 
-  if (!company) return <progress className="progress is-info" max="100">30%</progress>
+  if (!company) return <progress className="progress is-info" max="100" />
+
+  const {name, description} = company;
 
   return (
     <div>
       <h1 className="title">
-        {company.name}
+        {name}
       </h1>
       <div className="box">
-        {company.description}
+        {description}
       </div>
     </div>
   );

@@ -13,20 +13,25 @@ function JobDetail() {
       }, 1000);
   }, [jobId]);
 
-  if (!job) return <progress className="progress is-info" max="100">30%</progress>
+  if (!job) return <progress className="progress is-info" max="100" />
+
+  const { title, company, description } = job;
 
   return (
     <div>
       <h1 className="title">
-        {job.title}
+        {title}
       </h1>
       <h2 className="subtitle">
-        <Link to={`/companies/${job.company.id}`}>
-          {job.company.name}
+        <span className="icon mr-1 mt-2">
+          <i className="fa-solid fa-building"></i>
+        </span>
+        <Link to={`/companies/${company.id}`}>
+          {company.name}
         </Link>
       </h2>
       <div className="box">
-        {job.description}
+        {description}
       </div>
     </div>
   );

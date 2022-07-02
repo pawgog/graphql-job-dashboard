@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { staticText } from './staticText';
 
 function JobForm() {
   const [title, setTitle] = useState('');
@@ -12,13 +13,13 @@ function JobForm() {
   return (
     <div>
       <h1 className="title">
-        New Job
+        {staticText.newJob}
       </h1>
       <div className="box">
         <form>
           <div className="field">
             <label className="label">
-              Title
+              {staticText.title}
             </label>
             <div className="control">
               <input className="input" type="text" value={title}
@@ -28,7 +29,7 @@ function JobForm() {
           </div>
           <div className="field">
             <label className="label">
-              Description
+              {staticText.description}
             </label>
             <div className="control">
               <textarea className="textarea" rows={10} value={description}
@@ -39,7 +40,7 @@ function JobForm() {
           <div className="field">
             <div className="control">
               <button className="button is-link" onClick={handleSubmit}>
-                Submit
+                {staticText.submit}
               </button>
             </div>
           </div>

@@ -1,0 +1,15 @@
+export const staticText = {
+    jobDashboard: "Job Board",
+    jobsDashboard: "Jobs Board",
+    newJob: "New Job",
+    email: "Email",
+    password: "Password",
+    title: "Title",
+    description: "Description",
+    login: "Login",
+    loginError: "Login failed",
+    submit: "Submit",
+    home: "Home",
+    addJob: "Add Job",
+    logout: "Logout",
+}

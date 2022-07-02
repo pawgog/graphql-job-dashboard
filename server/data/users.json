@@ -10,5 +10,11 @@
     "email": "braun.chelsie@larson.info",
     "password": "chelsie1234",
     "companyId": "wvdB54Gqbdp_NZTXK9Tue"
+  },
+  {
+    "id": "639b2015cc6b706955edc34e",
+    "email": "test@test.com",
+    "password": "test",
+    "companyId": "wvdB54Gqbdp_NZTXK9Tue"
   }
 ]
