@@ -24,8 +24,8 @@ function LoginForm({ onLogin }) {
     <form onSubmit={handleSubmit}>
       <div className="field">
         <label className="label">
-        <span class="icon is-small is-left mr-2">
-          <i class="fas fa-envelope"></i>
+        <span className="icon is-small is-left mr-2">
+          <i className="fas fa-envelope"></i>
         </span>
         <span>{staticText.email}</span>
         </label>
@@ -37,8 +37,8 @@ function LoginForm({ onLogin }) {
       </div>
       <div className="field">
         <label className="label">
-        <span class="icon is-small is-left mr-2">
-          <i class="fas fa-lock"></i>
+        <span className="icon is-small is-left mr-2">
+          <i className="fas fa-lock"></i>
         </span>
         <span>{staticText.password}</span>
         </label>

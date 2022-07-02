@@ -10,8 +10,6 @@ function JobDashboard() {
     getJobs().then(setJobs)
   }, [])
 
-  console.log('jobs', jobs);
-
   return (
     <div>
       <h1 className="title">
