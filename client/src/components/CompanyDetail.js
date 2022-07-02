@@ -24,6 +24,7 @@ function CompanyDetail() {
       <div className="box mb-6">
         {description}
       </div>
+      <h6 className="subtitle">{jobs.length > 1 ? staticText.jobsList : staticText.jobList} {name}:</h6>
       <JobList jobs={jobs} />
     </div>
   );

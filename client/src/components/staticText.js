@@ -1,6 +1,8 @@
 export const staticText = {
     jobDashboard: "Job Board",
     jobsDashboard: "Jobs Board",
+    jobList: "Available position at",
+    jobsList: "Available positions at",
     newJob: "New Job",
     email: "Email",
     password: "Password",
