@@ -8,9 +8,7 @@ export const resolvers = {
     },
 
     Mutation: {
-        createJob: (_root, { title, comanyId, description }) => {
-            return Job.create({ title, comanyId, description})
-        }
+        createJob: (_root, { input }) => Job.create(input),
     },
 
     Job: {
