@@ -61,11 +61,6 @@ export async function createJob(input) {
         query CreateJobMutation($input: CreateJobInput!) {
             job: createJob(input: $input) {
                 id
-                title
-                company {
-                    id
-                    name
-                }
             }
         }
     `;
