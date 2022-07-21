@@ -8,8 +8,8 @@ export const resolvers = {
     },
 
     Mutation: {
-        createJob: (_root, { input }, { auth }) => {
-            if (!auth) {
+        createJob: (_root, { input }, { user }) => {
+            if (!user) {
                 throw new Error ('Unauthorized user!');
             }
             return Job.create(input);
