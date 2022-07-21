@@ -12,7 +12,7 @@ export const resolvers = {
             if (!user) {
                 throw new Error ('Unauthorized user!');
             }
-            return Job.create(input);
+            return Job.create({ ...input, companyId: user.companyId });
         }
     },
 
