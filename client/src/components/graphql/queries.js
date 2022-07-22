@@ -1,4 +1,5 @@
 import { request, gql } from 'graphql-request';
+import { getAccessToken } from '../../auth';
 
 const GRAPHQL_URL = 'http://localhost:9000/graphql';
 
@@ -65,6 +66,7 @@ export async function createJob(input) {
         }
     `;
     const variable = { input };
-    const { job } = await request(GRAPHQL_URL, query, variable);
+    const headers = { 'Authorization': `Token: ${getAccessToken()}`}
+    const { job } = await request(GRAPHQL_URL, query, variable, headers);
     return job;
 }
