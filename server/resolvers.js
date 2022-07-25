@@ -13,7 +13,8 @@ export const resolvers = {
                 throw new Error ('Unauthorized user!');
             }
             return Job.create({ ...input, companyId: user.companyId });
-        }
+        },
+        deleteJob: (_root, { id }) => Job.delete(id),
     },
 
     Job: {
