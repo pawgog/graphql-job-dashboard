@@ -14,4 +14,6 @@ export const staticText = {
     home: "Home",
     addJob: "Add Job",
     logout: "Logout",
+    infoMessage: "I am sorry, but there are no jobs on the list!",
+    errorMessage: "I am sorry, but something went wrong!"
 }
