@@ -34,6 +34,7 @@ const context = async ({ req }) => {
     const user = await User.findById(req.auth.sub);
     return { user };
   }
+  return {};
 };
 const apolloServer = new ApolloServer({ typeDefs, resolvers, context });
 await apolloServer.start();
