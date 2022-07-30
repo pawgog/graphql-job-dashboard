@@ -1,3 +1,4 @@
+// import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { request, gql } from 'graphql-request';
 import { getAccessToken } from '../../auth';
 
@@ -19,6 +20,7 @@ export async function getJob(id) {
     `;
     const variable = { id };
     const { job } = await request(GRAPHQL_URL, query, variable);
+    // const { data: { job } } = await client.query({ query: JOB_QUERY, variable });
     return job;
 }
 
@@ -35,6 +37,7 @@ export async function getJobs() {
         }
     `;
     const { jobs } = await request(GRAPHQL_URL, query);
+    // const { data: { jobs } } = await client.query({ query, fetchPolicy: 'no-cache' });
     return jobs;
 }
 
@@ -54,19 +57,29 @@ export async function getCompany(id) {
     `;
     const variable = { id };
     const { company } = await request(GRAPHQL_URL, query, variable);
+    // const { data: { company } } = await client.query({ query, variable });
     return company;
 }
 
 export async function createJob(input) {
-    const query = gql`
-        query CreateJobMutation($input: CreateJobInput!) {
+    const mutation = gql`
+        mutation CreateJobMutation($input: CreateJobInput!) {
             job: createJob(input: $input) {
                 id
+                title
+                company {
+                    id
+                    name
+                }
+                description
             }
         }
     `;
     const variable = { input };
-    const headers = { 'Authorization': `Token: ${getAccessToken()}`}
-    const { job } = await request(GRAPHQL_URL, query, variable, headers);
+    const headers = {'Authorization': `Bearer ${getAccessToken()}`}
+    // const context = {
+    //     headers: {'Authorization': `Bearer ${getAccessToken()}`}
+    // }
+    const { job } = await request(GRAPHQL_URL, mutation, variable, headers)
     return job;
 }

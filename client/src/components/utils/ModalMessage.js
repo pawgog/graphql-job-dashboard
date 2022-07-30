@@ -2,11 +2,11 @@ function ModalMessage(message, state) {
     const stateTitle = state === "danger" ? "Error" : state;
 
     return (
-        <article class={`message is-${state}`}>
-            <div class="message-header">
+        <article className={`message is-${state}`}>
+            <div className="message-header">
                 <p>{stateTitle}</p>
             </div>
-            <div class="message-body">
+            <div className="message-body">
                 {message}
             </div>
         </article>

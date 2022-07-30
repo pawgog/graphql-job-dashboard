@@ -12,7 +12,7 @@ function JobDashboard() {
     getJobs().then(setJobs).catch(() => setError(true))
   }, [])
 
-  if (jobs.length === 0 && !error) return <progress class="progress is-info" max="100" />
+  if (jobs.length === 0 && !error) return <progress className="progress is-info" max="100" />
   if (error) return ModalMessage(staticText.errorMessage, 'danger')
 
   return (
