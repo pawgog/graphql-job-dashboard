@@ -15,6 +15,7 @@ export const resolvers = {
             return Job.create({ ...input, companyId: user.companyId });
         },
         deleteJob: (_root, { id }) => Job.delete(id),
+        updateJob: (_root, { input }) => Job.update(input),
     },
 
     Job: {
