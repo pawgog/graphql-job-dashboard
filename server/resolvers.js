@@ -14,7 +14,16 @@ export const resolvers = {
             }
             return Job.create({ ...input, companyId: user.companyId });
         },
-        deleteJob: (_root, { id }) => Job.delete(id),
+        deleteJob: async (_root, { id }, { user }) => {
+            if (!user) {
+                throw new Error ('Unauthorized user!');
+            }
+            const job = Job.findById(id);
+            if (job.companyId !== user.companyId ) {
+                throw new Error ('Unauthorized user!');
+            }
+            return Job.delete(id)
+        },
         updateJob: (_root, { input }) => Job.update(input),
     },
 
