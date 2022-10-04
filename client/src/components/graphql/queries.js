@@ -6,20 +6,27 @@ const GRAPHQL_URL = 'http://localhost:9000/graphql';
 const client = new ApolloClient({
     uri: GRAPHQL_URL,
     cache: new InMemoryCache()
-})
+});
+
+const JOB_DETAIL_FRAGMENT = gql`
+    fragment JobDetail on Job {
+        id
+        title
+        company {
+            id
+            name
+        }
+        description
+    }
+`;
 
 const JOB_QUERY = gql`
     query JobQuery($id: ID!) {
         job(id: $id) {
-            id
-            title
-            company {
-                id
-                name
-            }
-            description
+            ...JobDetail
         }
     }
+    ${JOB_DETAIL_FRAGMENT}
 `;
 
 export async function getJob(id) {
@@ -68,15 +75,10 @@ export async function createJob(input) {
     const mutation = gql`
         mutation CreateJobMutation($input: CreateJobInput!) {
             job: createJob(input: $input) {
-                id
-                title
-                company {
-                    id
-                    name
-                }
-                description
+                ...JobDetail
             }
         }
+        ${JOB_DETAIL_FRAGMENT}
     `;
     const variables = { input };
     const context = {
