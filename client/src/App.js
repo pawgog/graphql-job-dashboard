@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Route, Routes } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
 import { isLoggedIn } from './auth';
 import CompanyDetail from './components/CompanyDetail';
 import LoginForm from './components/LoginForm';
@@ -8,6 +9,7 @@ import JobDashboard from './components/JobDashboard';
 import JobDetail from './components/JobDetail';
 import JobForm from './components/JobForm';
 import NavBar from './components/NavBar';
+import { client } from './components/graphql/queries';
 
 function App() {
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ function App() {
   };
 
   return (
-    <>
+    <ApolloProvider client={client}>
       <NavBar loggedIn={loggedIn} onLogout={handleLogout} />
       <main className="section">
         <Routes>
@@ -45,7 +47,7 @@ function App() {
           />
         </Routes>
       </main>
-    </>
+    </ApolloProvider>
   );
 }
 

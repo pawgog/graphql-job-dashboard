@@ -1,16 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@apollo/client';
 import JobList from './JobList';
 import ModalMessage from './utils/ModalMessage';
-import { getJobs } from '../components/graphql/queries';
+import { JOBS_QUERY } from '../components/graphql/queries';
 import { staticText } from './staticText';
 
 function JobDashboard() {
-  const [jobs, setJobs] = useState([]);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    getJobs().then(setJobs).catch(() => setError(true))
-  }, [])
+  const { data, loading, error } = useQuery(JOBS_QUERY, {
+    fetchPolicy: 'network-only'
+  });
+  const { jobs } = data;
 
   if (jobs.length === 0 && !error) return <progress className="progress is-info" max="100" />
   if (error) return ModalMessage(staticText.errorMessage, 'danger')
