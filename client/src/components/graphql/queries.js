@@ -40,8 +40,7 @@ export const JOBS_QUERY = gql`
             }
         }
     }
-`
-
+`;
 
 export async function getJob(id) {
     const variables = { id };

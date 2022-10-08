@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import JobList from './JobList';
 import ModalMessage from './utils/ModalMessage';
-import { JOBS_QUERY } from '../components/graphql/queries';
+import { JOBS_QUERY } from './graphql/queries';
 import { staticText } from './staticText';
 
 function JobDashboard() {
@@ -10,6 +10,7 @@ function JobDashboard() {
   });
   const { jobs } = data;
 
+  if (loading) return <progress className="progress is-info" max="100" />
   if (jobs.length === 0 && !error) return <progress className="progress is-info" max="100" />
   if (error) return ModalMessage(staticText.errorMessage, 'danger')
 
