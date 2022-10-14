@@ -1,14 +1,12 @@
-import { useQuery } from '@apollo/client';
 import JobList from './JobList';
 import ModalMessage from './utils/ModalMessage';
-import { JOBS_QUERY } from './graphql/queries';
+import { useJobs } from './graphql/hooks';
 import { staticText } from './staticText';
 
+
+
 function JobDashboard() {
-  const { data, loading, error } = useQuery(JOBS_QUERY, {
-    fetchPolicy: 'network-only'
-  });
-  const { jobs } = data;
+  const { jobs, loading, error } = useJobs();
 
   if (loading) return <progress className="progress is-info" max="100" />
   if (jobs.length === 0 && !error) return <progress className="progress is-info" max="100" />
