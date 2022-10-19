@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getCompany } from './graphql/queries';
+import { useCompany } from './graphql/hooks';
 import JobList from './JobList';
 import { staticText } from './staticText';
 
 function CompanyDetail() {
-  const [company, setCompany] = useState(null);
   const { companyId } = useParams();
+  const { company, loading } = useCompany(companyId);
 
-  useEffect(() => {
-      getCompany(companyId).then(setCompany)
-  }, [companyId]);
-
-  if (!company) return <progress className="progress is-info" max="100" />
+  if (loading) return <progress className="progress is-info" max="100" />
 
   const {name, description, jobs} = company;
 
