@@ -1,6 +1,6 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
-const GRAPHQL_URL = 'http://localhost:9000/graphql';
+const GRAPHQL_URL = 'https://jobs-board-s25o.onrender.com/graphql';
 
 export const client = new ApolloClient({
     uri: GRAPHQL_URL,

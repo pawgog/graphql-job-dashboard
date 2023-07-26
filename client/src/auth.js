@@ -3,7 +3,7 @@
 // better security
 
 const ACCESS_TOKEN_KEY = 'accessToken';
-const API_URL = 'http://localhost:9000';
+const API_URL = 'https://jobs-board-s25o.onrender.com';
 
 export function getAccessToken() {
   return localStorage.getItem(ACCESS_TOKEN_KEY);
