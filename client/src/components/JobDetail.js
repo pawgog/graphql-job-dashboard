@@ -7,6 +7,7 @@ function JobDetail() {
   const { job, loading, error } = useJob(jobId);
 
   if (loading) return <progress className="progress is-info" max="100" />
+  if (error) return <div>Something went wrong, try again later!</div>
 
   const { title, company, description } = job;
 

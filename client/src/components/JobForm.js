@@ -22,13 +22,13 @@ function JobForm() {
         {staticText.newJob}
       </h1>
       <div className="box">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="field">
             <label className="label">
               {staticText.title}
             </label>
             <div className="control">
-              <input className="input" type="text" value={title}
+              <input className="input" type="text" required value={title}
                 onChange={(event) => setTitle(event.target.value)}
               />
             </div>
@@ -38,7 +38,7 @@ function JobForm() {
               {staticText.description}
             </label>
             <div className="control">
-              <textarea className="textarea" rows={10} value={description}
+              <textarea className="textarea" rows={10} required value={description}
                 onChange={(event) => setDescription(event.target.value)}
               />
             </div>
@@ -46,8 +46,8 @@ function JobForm() {
           <div className="field">
             <div className="control">
               <button className="button is-link" 
+                type="submit"
                 disabled={loading}
-                onClick={handleSubmit}
               >
                 {staticText.submit}
               </button>
