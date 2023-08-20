@@ -26,25 +26,39 @@ function NavBar({ loggedIn, onLogout }) {
         </Link>
         )}
       </div>
+
+
+
       <div className="navbar-end">
-        <div className="navbar-item">
-          <div className="buttons">
-            {loggedIn ? (
-                <button className="button is-light" onClick={handleLogout}>
-                <span className="icon">
-                  <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                </span>
-                <span>{staticText.logout}</span>
-                </button>
-            ) : (
-              <Link className="button is-link is-light" to="/login">
-                <span className="icon">
-                  <i className="fa-solid fa-arrow-right-to-bracket"></i>
-                </span>
-                <span>{staticText.login}</span>
-              </Link>
-            )}
-          </div>
+        <div className="navbar-item has-dropdown is-hoverable">
+          {loggedIn ? (
+            <>
+              <div className="navbar-link">
+                User
+              </div>
+              <div className="navbar-dropdown is-light">     
+                <a className="navbar-item" href="/">
+                  Profile
+                </a>
+                <hr className="navbar-divider" />
+                  <div className="navbar-item">
+                    <button className="button is-light" onClick={handleLogout}>
+                      <span className="icon">
+                        <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                      </span>
+                      <span>{staticText.logout}</span>
+                    </button>
+                  </div>
+              </div>              
+            </>
+          ) : (
+            <Link className="button is-link is-light" to="/login">
+              <span className="icon">
+                <i className="fa-solid fa-arrow-right-to-bracket"></i>
+              </span>
+              <span>{staticText.login}</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>
