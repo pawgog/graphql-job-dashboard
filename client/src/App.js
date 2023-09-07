@@ -5,6 +5,7 @@ import { ApolloProvider } from '@apollo/client';
 import { isLoggedIn } from './auth';
 import CompanyDetail from './components/CompanyDetail';
 import LoginForm from './components/LoginForm';
+import ProfilePage from './components/ProfilePage';
 import JobDashboard from './components/JobDashboard';
 import JobDetail from './components/JobDetail';
 import JobForm from './components/JobForm';
@@ -41,6 +42,9 @@ function App() {
           />
           <Route path="/jobs/:jobId"
             element={<JobDetail />}
+          />
+          <Route path="/profile"
+            element={<ProfilePage />}
           />
           <Route exact path="/login"
             element={<LoginForm onLogin={handleLogin} />}
