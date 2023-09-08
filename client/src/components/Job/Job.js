@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useJob } from './graphql/hooks';
+import { useJob } from '../graphql/hooks';
 
 function JobDetail() {
   const { jobId } = useParams();
@@ -12,7 +12,7 @@ function JobDetail() {
   const { title, company, description } = job;
 
   return (
-    <div>
+    <>
       <h1 className="title">
         {title}
       </h1>
@@ -27,7 +27,7 @@ function JobDetail() {
       <div className="box">
         {description}
       </div>
-    </div>
+    </>
   );
 }
 

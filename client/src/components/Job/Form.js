@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { useCreateJob } from './graphql/hooks';
-import { staticText } from './staticText';
-
+import { useCreateJob } from '../graphql/hooks';
+import { staticText } from '../utils/staticText';
 
 function JobForm() {
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ function JobForm() {
   };
 
   return (
-    <div>
+    <>
       <h1 className="title">
         {staticText.newJob}
       </h1>
@@ -55,7 +54,7 @@ function JobForm() {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 

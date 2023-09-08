@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
 import { useCompany } from './graphql/hooks';
-import JobList from './JobList';
-import { staticText } from './staticText';
+import JobList from './Job/List';
+import { staticText } from './utils/staticText';
 
 function CompanyDetail() {
   const { companyId } = useParams();
@@ -12,7 +12,7 @@ function CompanyDetail() {
   const {name, description, jobs} = company;
 
   return (
-    <div>
+    <>
       <h1 className="title">
         {name}
       </h1>
@@ -21,7 +21,7 @@ function CompanyDetail() {
       </div>
       <h6 className="subtitle">{jobs.length > 1 ? staticText.jobsList : staticText.jobList} {name}:</h6>
       <JobList jobs={jobs} />
-    </div>
+    </>
   );
 }
 

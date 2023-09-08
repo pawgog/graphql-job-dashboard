@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../auth';
-import { staticText } from './staticText';
+import { staticText } from './utils/staticText';
 
 function NavBar({ loggedIn, onLogout }) {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);

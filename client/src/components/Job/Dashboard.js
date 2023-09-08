@@ -1,9 +1,7 @@
-import JobList from './JobList';
-import ModalMessage from './utils/ModalMessage';
-import { useJobs } from './graphql/hooks';
-import { staticText } from './staticText';
-
-
+import JobList from './List';
+import ModalMessage from '../utils/ModalMessage';
+import { useJobs } from '../graphql/hooks';
+import { staticText } from '../utils/staticText';
 
 function JobDashboard() {
   const { jobs, loading, error } = useJobs();
@@ -13,12 +11,12 @@ function JobDashboard() {
   if (error) return ModalMessage(staticText.errorMessage, 'danger')
 
   return (
-    <div>
+    <>
       <h1 className="title">
         {jobs.length > 1 ? staticText.jobsDashboard : staticText.jobDashboard}
       </h1>
       <JobList jobs={jobs} />
-    </div>
+    </>
   );
 }
 

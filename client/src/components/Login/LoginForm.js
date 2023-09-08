@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { login } from '../auth';
-import { staticText } from './staticText';
+import { login } from '../../auth';
+import { staticText } from '../utils/staticText';
 
 function LoginForm({ onLogin }) {
   const [email, setEmail] = useState('');

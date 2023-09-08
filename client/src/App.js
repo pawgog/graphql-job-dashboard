@@ -4,11 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import { isLoggedIn } from './auth';
 import CompanyDetail from './components/CompanyDetail';
-import LoginForm from './components/LoginForm';
-import ProfilePage from './components/ProfilePage';
-import JobDashboard from './components/JobDashboard';
-import JobDetail from './components/JobDetail';
-import JobForm from './components/JobForm';
+import LoginForm from './components/Login/LoginForm';
+import ProfilePage from './components/Login/ProfilePage';
+import JobDashboard from './components/Job/Dashboard';
+import JobDetail from './components/Job/Job';
+import JobForm from './components/Job/Form';
 import NavBar from './components/NavBar';
 import { client } from './components/graphql/queries';
 
