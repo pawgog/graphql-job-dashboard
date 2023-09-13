@@ -1,5 +1,6 @@
 type Query {
   company(id: ID!): Company
+  user(id: ID!): User
   job(id: ID!): Job
   jobs: [Job!]
 }
@@ -22,6 +23,12 @@ type Company {
   name: String!
   description: String
   jobs: [Job!]
+}
+
+type User {
+  id: ID!
+  email: String!
+  companyId: String!
 }
 
 input CreateJobInput {

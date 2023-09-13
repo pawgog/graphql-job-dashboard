@@ -1,4 +1,4 @@
-import { Job, Company } from './db.js';
+import { Job, Company, User } from './db.js';
 
 function rejectIf(condition) {
     if (condition) {
@@ -8,8 +8,9 @@ function rejectIf(condition) {
 
 export const resolvers = {
     Query: {
-        company:(_root, { id }) => Company.findById(id),
-        job:(_root, { id }) => Job.findById(id),
+        company: (_root, { id }) => Company.findById(id),
+        job: (_root, { id }) => Job.findById(id),
+        user: (_root, { id }) => User.findById(id),
         jobs: () => Job.findAll(),
     },
 
