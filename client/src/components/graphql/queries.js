@@ -63,3 +63,13 @@ export const CREATE_JOB_MUTATION = gql`
     }
     ${JOB_DETAIL_FRAGMENT}
 `;
+
+export const USER_QUERY = gql`
+    query UserQuery {
+        user {
+            id
+            email
+            companyId
+        }
+    }
+`;
