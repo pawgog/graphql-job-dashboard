@@ -9,29 +9,42 @@ function ProfilePage() {
           <span className="text-sm my-2">user@user.com</span>
           <span>Company Name</span>
         </div>
-        <div className="w-1/2">
-          <table>
-            <tr>
-              <td>Name</td>
-              <td>Name Surname</td>
-            </tr>
-            <tr>
-              <td>Role</td>
-              <td>User</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>user@user.com</td>
-            </tr>
-            <tr>
-              <td>Contact</td>
-              <td>0123456789</td>
-            </tr>
-            <tr>
-              <td>Status</td>
-              <td>Active</td>
-            </tr>
-          </table>
+        <div className="flex flex-col w-1/2">
+          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+              <div className="overflow-hidden">
+                <table className="min-w-full text-left text-sm font-light">
+                  <tbody>
+                    <tr
+                      className="border-b bg-slate-100">
+                      <td className="whitespace-nowrap px-6 py-4">Name</td>
+                      <td className="whitespace-nowrap px-6 py-4">Name Surname</td>
+                    </tr>
+                    <tr
+                      className="border-b bg-slate-200">
+                      <td className="whitespace-nowrap px-6 py-4">Role</td>
+                      <td className="whitespace-nowrap px-6 py-4">User</td>
+                    </tr>
+                    <tr
+                      className="border-b bg-slate-100">
+                      <td className="whitespace-nowrap px-6 py-4">Email</td>
+                      <td className="whitespace-nowrap px-6 py-4">user@user.com</td>
+                    </tr>
+                    <tr
+                      className="border-b bg-slate-200">
+                      <td className="whitespace-nowrap px-6 py-4">Contact</td>
+                      <td className="whitespace-nowrap px-6 py-4">0123456789</td>
+                    </tr>
+                    <tr
+                      className="border-b bg-slate-100">
+                      <td className="whitespace-nowrap px-6 py-4">Status</td>
+                      <td className="whitespace-nowrap px-6 py-4">Active</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
