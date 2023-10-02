@@ -1,3 +1,13 @@
+import ProfilePageDetails from "./ProfilPageDetails";
+
+const userData = [{
+  name: "Name Surname",
+  email: "user@user.com",
+  phone: "0123456789",
+  role: "User",
+  status: "active"
+}]
+
 function ProfilePage() {
   return (
     <>
@@ -15,31 +25,7 @@ function ProfilePage() {
               <div className="overflow-hidden">
                 <table className="min-w-full text-left text-sm font-light">
                   <tbody>
-                    <tr
-                      className="border-b bg-slate-100">
-                      <td className="whitespace-nowrap px-6 py-4">Name</td>
-                      <td className="whitespace-nowrap px-6 py-4">Name Surname</td>
-                    </tr>
-                    <tr
-                      className="border-b bg-slate-200">
-                      <td className="whitespace-nowrap px-6 py-4">Role</td>
-                      <td className="whitespace-nowrap px-6 py-4">User</td>
-                    </tr>
-                    <tr
-                      className="border-b bg-slate-100">
-                      <td className="whitespace-nowrap px-6 py-4">Email</td>
-                      <td className="whitespace-nowrap px-6 py-4">user@user.com</td>
-                    </tr>
-                    <tr
-                      className="border-b bg-slate-200">
-                      <td className="whitespace-nowrap px-6 py-4">Contact</td>
-                      <td className="whitespace-nowrap px-6 py-4">0123456789</td>
-                    </tr>
-                    <tr
-                      className="border-b bg-slate-100">
-                      <td className="whitespace-nowrap px-6 py-4">Status</td>
-                      <td className="whitespace-nowrap px-6 py-4">Active</td>
-                    </tr>
+                    {userData.map((user) => Object.keys(user).map((key) => <ProfilePageDetails key={key} label={key} user={user[key]} />))}
                   </tbody>
                 </table>
               </div>
