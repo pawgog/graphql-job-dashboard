@@ -29,7 +29,7 @@ function ProfilePage() {
               <div className="overflow-hidden">
                 <table className="min-w-full text-left text-sm font-light">
                   <tbody>
-                    {userData.map((user) => Object.keys(user).map((key) => <ProfilePageDetails key={key} label={key} user={user[key]} />))}
+                    {userData.map((user) => Object.keys(user).map((key) => key !== "img" && <ProfilePageDetails key={key} label={key} user={user[key]} />))}
                   </tbody>
                 </table>
               </div>
