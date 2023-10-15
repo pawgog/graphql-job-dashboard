@@ -1,20 +1,37 @@
 [
   {
     "id": "uogQAZnLcAlT6lMuNbpQg",
-    "email": "btowne@kozey.org",
-    "password": "btowne123",
+    "name": "Ross Towne",
+    "phone": "0123456789",
+    "email": "rtowne@kozey.org",
+    "img": "/img/profile.png",
+    "role": "User",
+    "status": "active",
+    "password": "rtowne123",
     "companyId": "pVbRRBQtMVw6lUAkj1k43"
   },
   {
     "id": "i0Nn6qvicHP5DTuKTyaq0",
+    "name": "Braun Chelsie",
+    "phone": "0123456789",
     "email": "braun.chelsie@larson.info",
+    "img": "/img/profile.png",
+    "role": "User",
+    "status": "former",
     "password": "chelsie1234",
     "companyId": "wvdB54Gqbdp_NZTXK9Tue"
   },
   {
     "id": "639b2015cc6b706955edc34e",
+    "name": "Name Surname",
+    "phone": "0123456789",
     "email": "test@test.com",
+    "img": "/img/profile.png",
+    "role": "User",
+    "status": "former",
     "password": "test",
     "companyId": "wvdB54Gqbdp_NZTXK9Tue"
   }
 ]
+
+
