@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/client';
 import { isLoggedIn } from './auth';
 import CompanyDetail from './components/CompanyDetail';
 import LoginForm from './components/Login/LoginForm';
-import ProfilePage from './components/Login/ProfilePage';
+import ProfilePage from './components/Profile/ProfilePage';
 import JobDashboard from './components/Job/Dashboard';
 import JobDetail from './components/Job/Job';
 import JobForm from './components/Job/Form';
