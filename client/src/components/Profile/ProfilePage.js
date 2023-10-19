@@ -1,6 +1,6 @@
 import ProfilePageDetails from "./ProfilPageDetails";
 
-const userData = [{
+const userData = {
   name: "Name Surname",
   email: "user@user.com",
   phone: "0123456789",
@@ -8,14 +8,14 @@ const userData = [{
   img: "/img/profile.png",
   role: "User",
   status: "active"
-}]
+};
 
 function ProfilePage() {
   return (
     <>
       <h2 className="mb-14 text-2xl font-bold">Profile Page</h2>
       <div className="flex h-auto">
-        {userData.map((user) => (
+        {Object.keys(user).map((user) => (
           <div key={user.name} className="flex flex-col justify-items-center items-center w-1/2 p-2">
             <img className="h-40 w-40 rounded-full" src={user.img} alt="profile" />
             <h6 className="pt-5">{user.name}</h6>
@@ -29,7 +29,7 @@ function ProfilePage() {
               <div className="overflow-hidden">
                 <table className="min-w-full text-left text-sm font-light">
                   <tbody>
-                    {userData.map((user) => Object.keys(user).map((key) => key !== "img" && <ProfilePageDetails key={key} label={key} user={user[key]} />))}
+                    {Object.keys(user).map((key) => key !== "img" && <ProfilePageDetails key={key} label={key} user={user[key]} />)}
                   </tbody>
                 </table>
               </div>
